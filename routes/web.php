@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LogInController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,3 +16,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::get('/login', [LogInController::class, 'login'])->name('login');
